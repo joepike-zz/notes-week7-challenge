@@ -10,7 +10,7 @@ NoteListView.prototype.viewNoteList = function() {
 NoteListView.prototype.createHtmlString = function() {
   return "<ul><li>" + this.viewNoteList()
   .getNotes()
-  .map(note => note.getNoteText())
+  .map(note => note.getNoteText().slice(0, 20))
   .join("</li><li>") + "</li></ul>";
 };
 
