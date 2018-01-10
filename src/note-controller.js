@@ -1,4 +1,3 @@
-window.onload = function(){
 
   (function(exports) {
   function NoteController(noteList = new NoteList()) {
@@ -7,13 +6,14 @@ window.onload = function(){
     this.view = new NoteListView(this.noteList);
   };
 
-  NoteController.prototype.insertHtml = function() {
-    document.getElementById('app').innerHTML = this.view.createHtmlString();
+  NoteController.prototype.insertHtml = function(noteListView = this.view) {
+    document.getElementById('notelist').innerHTML = noteListView.createHtmlString();
+    // html = this.view.createHtmlString();
   };
 
   exports.NoteController = NoteController;
   })(this);
 
-  controller = new NoteController();
-  controller.insertHtml()
-};
+
+
+// we want NoteController.NoteListView to return
