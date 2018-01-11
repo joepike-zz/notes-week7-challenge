@@ -1,6 +1,7 @@
 (function(exports) {
-function Note(string) {
+function Note(string, id) {
   this.text = string;
+  this.id = id;
 };
 
 Note.prototype.getNoteText = function() {
@@ -8,4 +9,5 @@ Note.prototype.getNoteText = function() {
 };
 
   exports.Note = Note;
+
 })(this);

@@ -9,6 +9,7 @@ function testCreateHtmlString() {
 
   assert.isTrue(noteListView.createHtmlString() === "<ul><li>Pesto rules</li><li>Only with pasta</li></ul>");
 };
+
 testCreateHtmlString();
 
 function test20CharLimit() {
@@ -24,3 +25,20 @@ function test20CharLimit() {
 }
 
 test20CharLimit();
+
+function testNoteUrls() {
+
+  notelist = new NoteList;
+
+  notelist.createNote("Hello");
+  notelist.createNote("Goodbye");
+
+  notelistview = new NoteListView(notelist);
+
+  console.log(notelistview.createHtmlString());
+
+  assert.isTrue(notelistview.createHtmlString() === "<ul><li>Hello</li><li>Goodbye</li></ul>")
+
+}
+
+testNoteUrls();

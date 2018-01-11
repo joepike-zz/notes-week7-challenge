@@ -30,3 +30,15 @@ function testCreateNote() {
   assert.isTrue(noteList.notes[0].getNoteText() === "note 1")
 }
 testCreateNote();
+
+function testAddUniqueIdToEachNote() {
+
+  notelist = new NoteList;
+
+  notelist.createNote("Hello");
+
+  assert.isTrue(notelist.notes[0].id === 0)
+
+}
+
+testAddUniqueIdToEachNote();
